@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @user_error %>
+
+<div>
+  <%= link_to "Edit this user error", edit_user_error_path(@user_error) %> |
+  <%= link_to "Back to user errors", user_errors_path %>
+
+  <%= button_to "Destroy this user error", @user_error, method: :delete %>
+</div>
