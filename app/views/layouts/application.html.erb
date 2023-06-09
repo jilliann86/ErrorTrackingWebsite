@@ -10,12 +10,47 @@
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %> 
     <%= javascript_importmap_tags %>  
   
+    <!-- nav bar stuff -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     
+
   </head>
 
-  <body>
-    <h1>HI</h1>
-    <button id='create_user'>Click here!</button>
-    <%= yield %>
+<div class="row">
+<header id="nav-wrapper">
+    <nav id="nav">
+      <div class="nav left">
+        <span class="gradient skew"><h1 class="logo un-skew">Error Tracker</h1></span>
+        <button id="menu" class="btn-nav"><span class="fas fa-bars"></span></button>
+      </div>
+      <div class="nav right">
+        <div class="nav-link active"><span class="nav-link-span"><span class="u-nav"><%= link_to "See Users", users_path %> </span></span></div>
+        <div class="nav-link"><span class="nav-link-span"><span class="u-nav"> <%= link_to "See Errors", errors_path %></span></span></div>
+        <div class="nav-link"><span class="nav-link-span"><span class="u-nav"><%= link_to "See All User Errors", user_errors_path %></span></span></div>
+      </div>
+    </nav>
+  </header>
+</div>
+  
+   
+   <body>
+    <main class="container" style="padding-top: 70px">
+     <%= yield %>
+      </div>
+  </main>
   </body>
+ 
+  
 </html>
+
+<!--
+ <nav>
+        <h1>Error Tracker</h1>
+        <li><%= link_to "See Users", users_path %></li>
+        <li><%= link_to "See Errors", errors_path %></li>
+        <li><%= link_to "See All User Errors", user_errors_path %></li>
+    </nav>
+    <%= yield %>
+-->

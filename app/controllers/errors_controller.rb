@@ -3,11 +3,15 @@ class ErrorsController < ApplicationController
 
   # GET /errors or /errors.json
   def index
-    @errors = Error.all
+    @errors = Error.order(severity: :desc)
+    #error_counts = UserError.left_joins(:errors).group(:id).count
+    #@foo = error
+
   end
 
   # GET /errors/1 or /errors/1.json
   def show
+    @user_errors = UserError.all
   end
 
   # GET /errors/new

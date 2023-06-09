@@ -3,16 +3,28 @@
 <h1>Errors</h1>
 
 <div id="errors">
-  <% @errors.each do |error| %>
-    <%= render error %>
-    <p>
-      <%= link_to "Show this error", error %>
-    </p>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Severity</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @errors.each do |error| %>
+    <tr>
+      <td> <%=link_to error.name, error %> </td>
+      <td> <%= error.severity %> </td>
+    </tr>
   <% end %>
+  </tbody>
+</table>  
 </div>
 
-<%= link_to "New error", new_error_path %>
+
 <div>
-<%= link_to "Users Table", users_path %>
+<%= link_to "Create New Error", new_error_path, class: "btn btn-outline-secondary" %>
 </div>
+
+
 

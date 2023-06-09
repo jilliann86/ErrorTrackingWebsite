@@ -1,9 +1,28 @@
-<div id="<%= dom_id error %>">
-  <p>
-    <strong>Name:</strong>
-    <%= error.name %>
-  </p>
-
+<div id="<%= dom_id error %>", style='padding-top = 50%'>
+  <h1><%= error.name %> Errors</h1>
+  <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">User Error Id</th>
+      <th scope="col">Full Name</th>
+      <th scope="col">Note</th>
+      <th scope="col">Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @user_errors.each do |user_error| %>
+    <% if (user_error.error_id == error.id)%>
+      <tr>
+        <td> <%= user_error.id%> </td>
+        <td> <%= user_error.user.full_name %> </td>
+        <td> <%= user_error.note %> </td>
+        <td> <%= user_error.date %> </td>
+      </tr>
+    <% end %>
+  <% end %>
+  </tbody>
+</table> 
+  
   <p>
     <strong>Severity:</strong>
     <%= error.severity %>

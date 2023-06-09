@@ -3,8 +3,7 @@
 <%= render @user_error %>
 
 <div>
-  <%= link_to "Edit this user error", edit_user_error_path(@user_error) %> |
-  <%= link_to "Back to user errors", user_errors_path %>
 
-  <%= button_to "Destroy this user error", @user_error, method: :delete %>
+  <%= link_to "Edit this user error", edit_user_error_path(@user_error), class: "btn btn-outline-secondary" %> 
+  <%= link_to "Back to user errors", user_errors_path, class: "btn btn-outline-secondary" %>
 </div>

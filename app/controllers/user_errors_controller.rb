@@ -1,6 +1,6 @@
 class UserErrorsController < ApplicationController
   before_action :set_user_error, only: %i[ show edit update destroy ]
-
+  before_action :initialize_existing_errors, only: [:new, :create, :edit]
   # GET /user_errors or /user_errors.json
   def index
     @user_errors = UserError.all
@@ -21,6 +21,7 @@ class UserErrorsController < ApplicationController
 
   # POST /user_errors or /user_errors.json
   def create
+    
     @user_error = UserError.new(user_error_params)
 
     respond_to do |format|
@@ -66,5 +67,9 @@ class UserErrorsController < ApplicationController
     # Only allow a list of trusted parameters through.
     def user_error_params
       params.require(:user_error).permit(:user_id, :error_id, :note, :date)
+    end
+
+    def initialize_existing_errors
+      @existing_errors = Error.all
     end
 end
