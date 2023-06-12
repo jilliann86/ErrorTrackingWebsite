@@ -4,9 +4,7 @@ class ErrorsController < ApplicationController
   # GET /errors or /errors.json
   def index
     @errors = Error.order(severity: :desc)
-    #error_counts = UserError.left_joins(:errors).group(:id).count
-    #@foo = error
-
+    @counts_of_errors = UserError.group(:error_id).count
   end
 
   # GET /errors/1 or /errors/1.json

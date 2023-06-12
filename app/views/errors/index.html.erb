@@ -8,6 +8,7 @@
     <tr>
       <th scope="col">Name</th>
       <th scope="col">Severity</th>
+      <th scope="col">Count</th>
     </tr>
   </thead>
   <tbody>
@@ -15,6 +16,7 @@
     <tr>
       <td> <%=link_to error.name, error %> </td>
       <td> <%= error.severity %> </td>
+      <td> <%= @counts_of_errors[error.id] %> </td>
     </tr>
   <% end %>
   </tbody>

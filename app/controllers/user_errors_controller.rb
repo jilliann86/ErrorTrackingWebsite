@@ -4,6 +4,7 @@ class UserErrorsController < ApplicationController
   # GET /user_errors or /user_errors.json
   def index
     @user_errors = UserError.all
+   
   end
 
   # GET /user_errors/1 or /user_errors/1.json

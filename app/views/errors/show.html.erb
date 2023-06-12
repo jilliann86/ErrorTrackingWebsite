@@ -3,8 +3,10 @@
 <%= render @error %>
 
 <div>
-  <%= link_to "Edit this error", edit_error_path(@error) %> |
-  <%= link_to "Back to errors", errors_path %>
-
-  <%= button_to "Destroy this error", @error, method: :delete %>
+  <%= link_to "Edit this error", edit_error_path(@error), class: "btn btn-outline-secondary" %>
+  <br>
+  <br>
+  <%= button_to "Destroy this error", @error, method: :delete, class: "btn btn-outline-secondary"%>
+  <br>
+  <%= link_to "Back to errors", errors_path, class: "btn btn-outline-secondary" %>
 </div>
